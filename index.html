@@ -10,7 +10,8 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet"></noscript>
 <style>
   html,body{margin:0;padding:0;}
   body{background:hsl(216,50%,10%);font-family:Inter,sans-serif;color:hsl(0,0%,98%);-webkit-font-smoothing:antialiased;}
@@ -22,8 +23,15 @@
   select:focus,input:focus{outline:none;box-shadow:0 0 0 2px hsl(145,60%,42%);}
 </style>
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 if(!window.__fbPixelInit){window.__fbPixelInit=true;fbq('init','2170508356765219');fbq('track','PageView');}
+function __loadFbSdk(){
+  if(window.__fbSdkLoading)return;window.__fbSdkLoading=true;
+  var t=document.createElement('script');t.async=true;t.src='https://connect.facebook.net/en_US/fbevents.js';
+  var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t,s);
+}
+if('requestIdleCallback' in window){requestIdleCallback(__loadFbSdk,{timeout:3500});}else{setTimeout(__loadFbSdk,2000);}
+['scroll','mousemove','touchstart','keydown','click'].forEach(function(ev){window.addEventListener(ev,__loadFbSdk,{once:true,passive:true});});
 </script>
 <noscript><img height="1" width="1" style="display:none" src="93f717d7-189d-4898-b8d7-b3bf1c0e310a"></noscript>
 </helmet>
@@ -42,7 +50,7 @@ if(!window.__fbPixelInit){window.__fbPixelInit=true;fbq('init','2170508356765219
       <p style="color:hsl(0,0%,98%,0.7);font-size:clamp(0.9rem,1.3vw,1.125rem);max-width:42rem;margin:0 auto 2.5rem;">Sem depender de marketing caro. Sem descontos. Sem promoções malucas.</p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:2.5rem;">
         <div style="display:flex;align-items:center;gap:0.75rem;background:hsl(216,45%,15%,0.85);padding:0.75rem 1.5rem;border-radius:0.75rem;border:1px solid hsl(216,30%,22%);">
-          <span style="color:hsl(45,90%,55%);font-family:Oswald,sans-serif;font-size:1.5rem;font-weight:700;">18/08</span>
+          <span style="color:hsl(45,90%,55%);font-family:Oswald,sans-serif;font-size:1.5rem;font-weight:700;">22/09</span>
           <div style="text-align:left;">
             <p style="margin:0;font-size:0.875rem;color:hsl(210,15%,65%);">Terça-feira</p>
             <p style="margin:0;color:hsl(0,0%,98%);font-weight:600;">13h — via Google Meet</p>
